@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Help me choose between...</h1>
+    <h1 class="titleHelp">Help me choose between...</h1>
     <img src="https://lh3.googleusercontent.com/-x39NX9r0yYY/WKtK5ZyjLNI/AAAAAAAADfA/PZgc6O-zN4su81kmSws5v1MLUhqRVdWBwCJoC/w500-h500/IMG_2368.PNG" alt="Glad säl" width="48" heigt="48">
     <div class="inputSection">
       <div class="inputs">
@@ -14,6 +15,25 @@
       </div>
       <button class="addOption">Add choice</button>
     </div>
+    <div class="resultSection"></div>
     <button>Go!</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function() {
+        $('.resultSection').hide()
+
+        var add_option = function() {
+          $('.inputs').append('<input></input>')
+        }
+
+        $('.addOption').click(add_option)
+      })
+
+      $('.titleHelp').click(function(){
+        $('body').toggleClass('green');
+      });
+
+    </script>
   </body>
 </html>

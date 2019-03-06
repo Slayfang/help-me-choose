@@ -15,6 +15,17 @@ body {
     margin-top: 150px;
     background-image: linear-gradient(to right, rgba(149,246,240,0), rgba(149,246,240,1));
   }
+
+  body.green {
+      display: flex;
+      flex-direction: column;
+      justify-content: : center;
+      align-items: center;
+      margin-top: 150px;
+      background-image: linear-gradient(to right, rgba(255,254,139,0), rgba(255,254,139,1));
+    }
+
+
   h1 {
     font-weight: lighter;
     font-size: 40;
