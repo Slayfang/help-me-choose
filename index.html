@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1 class="titleHelp">Help me choose between...</h1>
+    <h1 style="display: none">The winner is:</h1>
     <img src="https://lh3.googleusercontent.com/-x39NX9r0yYY/WKtK5ZyjLNI/AAAAAAAADfA/PZgc6O-zN4su81kmSws5v1MLUhqRVdWBwCJoC/w500-h500/IMG_2368.PNG" alt="Glad säl" width="48" heigt="48">
     <div class="inputSection">
       <div class="inputs">
@@ -15,7 +16,7 @@
       <button class="addOption">Add choice</button>
     </div>
     <div class="resultSection"></div>
-    <button>Go!</button>
+    <button class="submit">Go!</button>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
@@ -23,10 +24,26 @@
         $('.resultSection').hide()
 
         var add_option = function() {
-          $('.inputs').append('<input></input>')
-        }
+        $('.inputs').append('<input></input>')
 
+        }
         $('.addOption').click(add_option)
+
+        var options = []
+        var submit = function() {
+          $('.inputSection').hide()
+          $('.resultSection').css('display', 'flex')
+          $('input').each(function() {
+            options.push($(this).val())
+          })
+          var winner = options[Math.floor(Math.random() * options.length)]
+          console.log(winner)
+          $('.resultSection').text(winner)
+          $( "h1" ).toggle()
+
+        }
+        $('.submit').click(submit)
+
       })
 
       $('.titleHelp').click(function(){
